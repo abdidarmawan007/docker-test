@@ -1,5 +1,5 @@
 FROM phusion/baseimage
-MAINTAINER Thiago Taranto <ttaranto@gmail.com>
+MAINTAINER Abdi Darmawan <abdid46@gmail.com>
 
 # ensure UTF-8
 RUN locale-gen en_US.UTF-8

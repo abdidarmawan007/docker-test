@@ -1,0 +1,10 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Logging": "/tmp/sample-app",
+  "Image": {
+    "Name": "638330312087.dkr.ecr.ap-southeast-1.amazonaws.com/api-mobile:0.0.2"
+  },
+  "Ports": [
+    {"ContainerPort": "80"}
+  ]
+}

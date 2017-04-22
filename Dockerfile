@@ -34,7 +34,7 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y git
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
-# add build script (also set timezone to Americas/Sao_Paulo)
+# add build script (also set timezone to Asia/Jakarta)
 RUN mkdir -p /root/setup
 ADD build/setup.sh /root/setup/setup.sh
 RUN chmod +x /root/setup/setup.sh

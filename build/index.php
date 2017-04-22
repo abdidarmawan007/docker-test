@@ -1,8 +1,8 @@
 <html>
  <head>
-  <title>Web Docker Test</title>
+  <title>Web Docker</title>
  </head>
  <body>
- <?php echo '<p>Hai Test Docker at AWS, keren gan</p>'; ?>
+ <?php echo '<p>Hai Test Docker at AWS, keren gan lol</p>'; ?>
  </body>
 </html>

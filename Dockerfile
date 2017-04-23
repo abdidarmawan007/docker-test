@@ -20,15 +20,15 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get update
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -y upgrade
 RUN DEBIAN_FRONTEND="noninteractive" apt-get update --fix-missing
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install php7.0
-RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install php7.0-fpm php7.0-common php7.0-cli php7.0-mysqlnd php7.0-mcrypt php7.0-curl php7.0-pspell php7.0-intl php7.0-bcmath php7.0-mbstring php7.0-soap php7.0-xml php7.0-zip php7.0-json php7.0-imap php-xdebug php-pgsql php-redis
+RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install php7.0-fpm php7.0-common php7.0-cli php7.0-mysqlnd php7.0-mcrypt php7.0-curl php7.0-pspell php7.0-intl php7.0-bcmath php7.0-mbstring php7.0-soap php7.0-xml php7.0-zip php7.0-json php7.0-imap php-xdebug php-redis
 
 # install nginx (full)
 RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y nginx-full
 
 # install latest version of nodejs
-RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y nodejs
-RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y npm
-RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y git
+#RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y nodejs
+#RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y npm
+#RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y git
 
 # install php composer
 RUN curl -sS https://getcomposer.org/installer | php
@@ -66,8 +66,14 @@ RUN chmod +x /etc/service/phpfpm/run
 
 # set WWW public folder
 RUN mkdir -p /var/www/public
-ADD build/index.php /var/www/public/index.php
 
+
+
+### add code to docker ###
+ADD code-app/index.php /var/www/public/index.php
+
+
+# set owner and permission folder #
 RUN chown -R www-data:www-data /var/www
 RUN chmod 755 /var/www
 

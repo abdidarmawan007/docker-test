@@ -3,6 +3,6 @@
   <title>Web Docker</title>
  </head>
  <body>
- <?php echo '<p>Hai Test Docker at AWS, keren gan,, v-28</p>'; ?>
+ <?php echo '<p>Hai Test Docker at AWS, keren gan,, v-29</p>'; ?>
  </body>
 </html>

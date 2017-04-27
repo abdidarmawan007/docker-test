@@ -70,7 +70,7 @@ RUN mkdir -p /var/www/public
 
 
 ### add code to docker ###
-ADD code-app/index.php /var/www/public/index.php
+ADD code-app/* /var/www/public/
 
 
 # set owner and permission folder #

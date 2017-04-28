@@ -15,9 +15,8 @@ RUN /etc/my_init.d/00_regen_ssh_host_keys.sh
 
 CMD ["/sbin/my_init"]
 
-# Set the timezone.
-RUN sudo echo "Asia/Jakarta" > /etc/timezone
-RUN sudo dpkg-reconfigure -f noninteractive tzdata
+# Set the timezone Asia/Jakarta
+RUN echo "Asia/Jakarta" > /etc/timezone && rm /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
 
 # nginx-php installation
 RUN DEBIAN_FRONTEND="noninteractive" apt-get update

@@ -1,4 +1,0 @@
-commands:
-  create_docker_agent:
-    command: "sudo docker run -d --name dd-agent -v /var/run/docker.sock:/var/run/docker.sock:ro -v /proc/:/host/proc/:ro -v /cgroup/:/host/sys/fs/cgroup:ro -e API_KEY=54478c16084ab4b99832ed8fad001adb -e SD_BACKEND=docker datadog/docker-dd-agent:latest"
-    ignoreErrors: true

@@ -18,6 +18,18 @@ CMD ["/sbin/my_init"]
 # Set the timezone Asia/Jakarta
 RUN echo "Asia/Jakarta" > /etc/timezone && rm /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
 
+## DataDog Agent Monitoring ##
+# RUN DD_API_KEY=54478c16084ab4b99832ed8fad001adb bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/dd-agent/master/packaging/datadog-agent/source/install_agent.sh)"
+
+#RUN  sh -c "echo 'deb https://apt.datadoghq.com/ stable main' > /etc/apt/sources.list.d/datadog.list"
+#RUN DEBIAN_FRONTEND="noninteractive" apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C7A7DA52
+#RUN DEBIAN_FRONTEND="noninteractive" apt-get update
+#RUN DEBIAN_FRONTEND="noninteractive" apt-get install datadog-agent
+#RUN sh -c "sed 's/api_key:.*/api_key: 54478c16084ab4b99832ed8fad001adb/' /etc/dd-agent/datadog.conf.example > /etc/dd-agent/datadog.conf"
+#CMD /etc/init.d/datadog-agent start
+
+
+
 # nginx-php installation
 RUN DEBIAN_FRONTEND="noninteractive" apt-get update
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -y upgrade
